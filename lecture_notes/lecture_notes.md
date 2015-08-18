@@ -7,6 +7,8 @@ author: Ivar Stangeby
 
 ## August 18th
 
+* Chapter 1.4 and 3.2 in McDonald and Weiss.
+
 We started with an outline of the course. It is divided into two "sections", namely
 *measure and integration theory* and *linear analysis*.
 
