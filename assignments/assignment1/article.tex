@@ -1,0 +1,123 @@
+\documentclass[a4paper, 10pt]{amsart}
+
+\usepackage[]{mathtools} 
+
+\title{Mandatory Assignment MAT3400}
+\author{Ivar Hauga\o kken Stangeby}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\section*{Problem 1}
+\noindent Let $\Omega$ be a non-empty set, $\left\{x_n\right\}_{n}^{}$ a sequence of
+distinct elements and $\left\{b_n\right\}_{n}^{}$ a sequence of non-negative
+real numbers. For $E \subseteq \Omega$ define
+\begin{equation}
+  \notag
+  \mu(E) = \sum^{}_{\mathclap{\{n\in\mathbb{N}\mid x_n\in E\}}} b_n.
+\end{equation}
+Prove that $\mu$ is a measure on $\mathcal{P}(\Omega)$.
+Note that the function $\mu$ is defined as a sum of non-negative real numbers.
+Hence it follows directly that $\mu(E) \leq 0$ for all $E \in
+\mathcal{P}(\Omega)$. We also see that since $x_n \notin \emptyset$ for all
+$n$, so in the case of $\mu(\emptyset)$ we have no contributions. Hence
+$\mu(\emptyset) = 0$.
+For the countable disjoint union, we simply write it out:
+\begin{align*}
+  \notag
+  \mu\left(\bigcup_{n} A_n\right)\,   &= \sum^{}_{\mathclap{\left\{ i \mid x_i \in \bigcup_{n} A_n \right\}}} b_n
+  \intertext{but since the sets are disjoint we can write this as distinct sums}
+  &= \sum^{}_{n} \left( \smashoperator[r]{\sum_{\left\{ i \mid x_i \in A_n \right\}}} b_n \right) = \sum^{}_{n} \mu(A_n). 
+\end{align*}
+Consequently, $\mu$ is a measure on $\mathcal{P}(\Omega)$ and the triplet
+$\left( \Omega, \mathcal{P}(\Omega), \mu \right)$ is a measure space.
+
+\section*{Problem 2}
+\noindent
+Consider the measure space $(\left[ 0, 1 \right], \mathcal{M}_{[0, 1]},
+\lambda )$ where $\lambda$ is the Lebesgue measure restricted to $[0,
+1]$. Let $f_n$ be defined on $[0, 1]$ as follows
+\begin{equation}
+  \notag
+  f_n(x) = \frac{n\sqrt{n}}{1 + n^2x^2}.
+\end{equation}
+We wish to compute $\lim_n\int_{\left[ 0, 1 \right]} f_n \, d\lambda$.  For $x
+\in [0, 1]$ we have that $f_n(x)$ is bounded by $1 / (2\sqrt{x})$ and since
+$f_n(x) \to 0$ as $n\to \infty$ we can apply Dominated Convergence Theorem.
+This yields:
+\begin{align*}
+  \lim_{n\to\infty} \int_{\left[ 0, 1 \right]} f_n \, d\lambda &= \int_{\left[ 0, 1 \right]} \lim_{n\to\infty} f_n \, d\lambda. 
+  \intertext{Using L'H\^opitals rule, we see that}
+  \lim_{n\to\infty}\int_{\left[ 0, 1 \right]} f_n \, d\lambda &= 0.
+\end{align*}
+
+\section*{Problem 3} \noindent Let $(\Omega, \mathcal{A}, \mu)$ be a measure
+space and $f : \Omega \to \left[ 0, 1 \right]$ an $\mathcal{A}$-measurable
+function. We wish to prove that $$ \lim_{n\to\infty}\int_\Omega f^{1/n} \, d\mu
+= \mu(f^{-1}((0, 1])).$$ We also wish to show that under the assumption
+$\mu(\Omega) \le \infty$, that $$ \lim_{n\to\infty} \int_\Omega f^n \, d\mu =
+\mu \left( f^{-1}(\left\{1 \right\}) \right).$$
+
+Note that the function $f^{1/n}$ is monotone on $\Omega$ since $f$ takes values
+in $[0, 1]$. If we partition our set $\Omega$ into two disjoint sets $\Omega_1$
+and $\Omega_2$, the set where $f$ takes the value $0$ and, the set where $f$
+takes values in $(0, 1]$, respectively, then we can split our integral into
+two:
+\begin{equation}
+  \notag
+  \lim_{n\to\infty} \int_\Omega f^{1/n}\, d\mu = \lim_{n\to\infty} \int_{\Omega_1} f^{1/n} \, d\mu + \lim_{n\to\infty} \int_{\Omega_2} f^{1/n} \, d\mu.
+\end{equation}
+Applying the Monotone Convergence Theorem lets us interchange limits and
+integrals:
+\begin{equation}
+  \notag
+\lim_{n\to\infty} \int_\Omega f^{1/n}\, d\mu = \int_{\Omega_2} 1 \, d\mu = \mu(\Omega_2) = \mu \left( f^{-1}(0, 1]) \right)
+\end{equation}
+as we wanted to show. The integral over $\Omega_1$ vanishes due to the
+pointwise limit in $x = 0$.
+
+Let us now assume that $\mu(\Omega) < \infty$. We consider the function $f^n$.
+This is a monotone decreasing function on the interval $[0, 1)$ and we again
+partition our integration domain into $\Omega_1$ and $\Omega_2$, the set
+where $f$ attains the value $1$ and the set where $f$ takes values in $[0,1)$ respectively.
+Applying the Monotone Convergence Theorem for monotone decreasing sequences tells us that
+\begin{equation}
+  \notag
+  \lim_{n\to\infty} \int_\Omega f^n \, d\mu = \int_{\Omega_1} \lim_{n\to\infty} f^n \, d\mu = \int_{\Omega_1} 1 \, d\mu = \mu \left( f^{-1}(\left\{ 1 \right\})\right).
+\end{equation}
+
+\section*{Problem 4}
+
+Let $ \sum^{\infty}_{k=0} a_k$ be a convergent series of non-negative real
+numbers and suppose that $b_{n_k}$ are complex numbers such that $|b_{n_k}|
+\leq M \le \infty$ for all $n, k \in \mathbb{N}$ and some positive real number
+$m$.
+
+We wish to consider $(\mathbb{N}, \mathcal{P}(\mathbb{N}), \mu)$ with $\mu$ the counting measure
+and write down a sequence $\left\{f_n\right\}_{n}^{}$ of complex-valued $\mathcal{P}(\mathbb{N})$-measurable functions
+such that the following is satisfied:
+\begin{equation}
+  \notag
+  \sum^{\infty}_{n=1} \int_\mathbb{N}|f_n| \, d\mu < \infty.
+\end{equation}
+
+Integrating with respect to the counting measure is equivalent to summing over function values. Hence
+\begin{equation}
+  \notag
+  \int_\mathbb{N}|f_n| \, d\mu = \sum^{\infty}_{i=1} |f_n(i)|.
+\end{equation}
+
+If we define the function $f_n$ by
+\begin{equation}
+  \notag
+  f_n(k) = \frac{a_nb_{n_k}}{2^k}
+\end{equation}
+then $\sum^{\infty}_{k=1} a_nb_{nk}/2^k \leq a_nM$.  Our integral then becomes 
+\begin{equation}
+  \notag
+  \sum^{\infty}_{n=1} \int_\mathbb{N}|f_n(k)| \, d\mu = M \sum^{\infty}_{n=1} a_n < \infty.
+\end{equation}
+
+
+\end{document}
