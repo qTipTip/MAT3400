@@ -1,0 +1,154 @@
+\documentclass{homework}
+\title{Weekly Problems}
+\course{MAT3400}
+\author{Ivar Stangeby}
+\begin{document}
+  \week{9}
+  \problem{2.2}
+  \begin{problemtext}
+    Let $S$ be any non-empty set and let $X$ be a normed space over $\mathbb{F}$. Let $F_b(S, X)$ be the linear subspace of $F(S, X)$ of all functions $f : S \to X$ such that $\left\{ \|f(s)\|_{b} \mid s \in S \right\}$ is bounded. Show that $F_b(S, X)$ has a norm defined by
+    \begin{equation}
+      \notag
+      \|f\|_{b} = \sup \left\{ \|f(s)\|_{}\mid s \in S \right\}.
+    \end{equation}
+  \end{problemtext}
+
+  \begin{solution}
+    First recall that $\|\cdot\|_{}$ is the norm on $X$, and consequently on
+    $S$.  Firstly, we see that $\sup \left\{ \|f(s)\|_{} \right\} \geq 0$ for
+    all $s \in S$ with $\|f(s)\|_{} = 0$ if and only if $f = 0$.  Let $\alpha
+    \in \mathbb{F}$. Then $\sup \left\{ \|\alpha f(s)\|_{} \right\} = \alpha
+  \sup \left\{ \|f(s)\|_{} \right\}$. Lastly, let $f, g \in F_b(S, X)$. Then
+\begin{equation} \notag \sup \left\{ \|f + g\|_{} \right\} \leq \sup \left\{
+\|f\| \right\} + \left\{ \|g\| \right\} \end{equation} It then follows that
+$\|\cdot\|_{b}$ is a norm on $F_b(S, X)$.
+  \end{solution}
+  \problem{2.3}
+
+  \begin{problemtext}
+    For each $n \in \mathbb{N}$ let $f_n : \left[ 0, 1 \right] \to \mathbb{R}$ be defined by $f_n(x) = x^n$. Find the norm of $f_n$ in the following cases:
+    \begin{enumerate}[a)]
+      \item in the normed space $C_\mathbb{R}\left( \left[ 0, 1\right] \right)$;
+      \item in the normed space $L^1[0, 1]$.
+    \end{enumerate}
+  \end{problemtext}
+  \begin{solution}\hfill
+    \begin{enumerate}[a)]
+      \item The \emph{standard norm} on $C_\mathbb{R}\left( \left[ 0,1 \right] \right)$ is defined by
+        \begin{equation}
+          \notag
+          \|f\|_{} = \sup \left\{ |f(x)| \mid x \in \left[ 0, 1 \right] \right\}.
+        \end{equation}
+        Therefore, $\|x^n\|_{} = 1$.
+      \item The standard norm on $L^1[0, 1]$ is defined by
+        \begin{equation}
+          \notag
+          \|f\|_{1} = \int_0^1 |f(x)| \, dx.
+        \end{equation}
+        Then $\|x^n\|_{1} = \int_0^1 |x^n| \, dx = \frac{1}{n+1}$.
+    \end{enumerate}
+  \end{solution}
+  \problem{2.12}
+
+  \begin{problemtext}
+    Let $X$ be a normed linear space and, for any $x \in X$ and $r >0$, let $T = \left\{ y \in X \mid \|y-x\|_{} \leq r \right\}$ and $S = \left\{ y \in X \mid \|x - y\|_{} < r \right\}$.
+    \begin{enumerate}[a)]
+      \item Show that $T$ is closed.
+      \item If $z \in T$ and $z_n = \left( r-n^{-1} \right)z$, for $n \in
+        \mathbb{N}$, show that $\lim_{n\to\infty} z_n = z$ and hence show that
+        $\overline{S} = T$.\unsure{The proposed solution uses $z_n = \left( 1 -
+        n^{-1} \right)z$ so I am going to assume that there is an error in the
+      problem text.}
+    \end{enumerate}
+  \end{problemtext}
+  \begin{solution}
+    \begin{enumerate}[a)]\hfill
+      \item Let $\left\{ y_n \right\}$ be a sequence in $T$ that converge to $z
+        \in X$. Then by definition $\|y_n - x\|_{} \leq r$. Taking limits and
+        applying Theorem 2.11 we have that
+        \begin{equation}
+          \notag
+          \lim_{n\to\infty} \|y_n - x\|_{} = \|z - x\|_{} \leq r
+        \end{equation}
+        hence $z \in T$ and consequently $T$ is closed.
+      \item We have that
+      \begin{equation}
+        \notag
+        \|z_n - z\|_{} = \|\left( (1 - n^{-1})z - z \right)\|_{} =
+        n^{-1}\|z\|_{} = n^{-1}\|z - 0\|_{} \leq n^{-1}
+      \end{equation}
+      hence $\lim_{n\to\infty} z_n = z$.
+
+      Since $S \subseteq T$ and $T$ is closed, $\overline{S} \subseteq T$.
+      Conversely, if $z \in T$ and $z_n$ defined as above then $\|z_n\|_{} =
+      \left( 1 - n^{-1} \right)\|z_n\|_{} \leq (1 - n^{-1})r < r$. Therefore
+      $z$ is a limit of a sequence of elements of $S$, so $z \in \overline{S}$.
+      Hence $T \subseteq \overline{S}$ so $T = \overline{S}$.
+    \end{enumerate}
+  \end{solution}
+  \problem{2.14}
+  \begin{problemtext}
+    Let $S$ be any non-empty set, let $X$ be a Banach space over $\mathbb{F}$
+    and let $F_b(S, X)$ be the vector space given in Problem 2.2 with the norm
+    $\|f\|_{b} = \sup \left\{ \|f(s)\|_{}\mid s \in S \right\}$. Show that
+    $F_b(S, X)$ is a Banach space.
+  \end{problemtext}
+  \begin{solution}
+    Let $\left\{ f_n \right\}$ be Cauchy in $F_b(S, X)$. Then there exists an $N$ such that
+    \begin{equation}
+      \notag
+      \|f_n(s) - f_m(s)\|_{} \leq \|f_n - f_m\|_{b} \leq \varepsilon.
+    \end{equation}
+    It then follows that $\left\{ f_n(s) \right\}$ is Cauchy in $X$, and since
+    $X$ is complete it is a convergent sequence. It is then meaningful to talk of the limit of this sequence, which we denote $f(s) = \lim_{n\to\infty} f_n(s)$. From the Cauchy property we have that
+    \begin{equation}
+      \notag
+      \lim_{m\to\infty} \|f_n(s) - f_m(s)\|_{} = \|f_n(s) - f(s)\|_{} \leq \varepsilon.
+    \end{equation}
+    Applying the inverse triangle inequality yields
+    \begin{equation}
+      \notag
+      \|f(s)\|_{} \leq \varepsilon+ \|f_n(s)\|_{} \leq \|f_n\|_{b} + \varepsilon.
+    \end{equation}
+    Hence $\|f(s)\|$ is bounded and we can therefore conclude that $f \in
+    F_b(S, X)$.\comment{The reason we did all this was to make sure that the
+    limit function was in fact inside the space $F_b(S, X)$.} It then follows
+    that $F_b(S, X)$ is a Banach space.
+  \end{solution}
+  \problem{3.4}
+  \begin{problemtext}
+    Give the proof of Lemma 3.14.
+  \end{problemtext}
+  \begin{solution}
+    Lemma 3.14 states that if $X$ is an inner product space with inner product
+    $\left( \cdot \mid \cdot \right)$. Then for all $u, v, x, y \in X$:
+    \begin{enumerate}[a)]
+      \item $\left( u + v \mid x + y \right) - \left( u - v \mid x - y \right)
+        = 2\left( u \mid y \right) + 2\left( v \mid x \right)$;
+      \item $4\left( u \mid y \right) = \left( u+v \mid x+y \right) - \left(
+        u-v \mid x-y \right) +i\left( u-iv \mid x-iy \right) -i\left( u-iv \mid
+        x-iy \right)$.\\ (for complex $X$).
+    \end{enumerate}
+    For the first one, we simply perform the calculations, using the linearity
+    in the first variable and the conjugate linearity in the second variable.
+    For the second we simply observe that the right hand side closely resembles
+    the identity in a) so we apply that and use the conjugate linearity in the
+    second variable.  We have that
+    \begin{align*}
+      &\left( u+v  \mid  x+y \right) - \left( u-v  \mid  x-y \right) = 2\left( u  \mid  y \right) + 2\left( v  \mid  x \right) \\
+      &i\left( u-iv  \mid  x-iy \right) -i\left( u-iv  \mid  x-iy \right) = -i^2(2\left( u  \mid  y \right) + 2\left( u \mid  x \right) )
+    \end{align*}
+    Adding these two together yields $4\left( u  \mid  y \right)$ as we wanted
+    to show.
+  \end{solution}
+
+  \week{10}
+
+  \problem{3.10}
+
+  \problem{3.15}
+  \problem{3.22}
+  \problem{3.24}
+  \problem{3.27}
+  \problem{3.28}
+\end{document}
