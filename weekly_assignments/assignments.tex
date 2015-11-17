@@ -151,4 +151,61 @@ $\|\cdot\|_{b}$ is a norm on $F_b(S, X)$.
   \problem{3.24}
   \problem{3.27}
   \problem{3.28}
+
+  \week{11}
+  \problem{6.2}
+  \begin{problemtext}
+  	Find the adjoint of the linear operator $T : \ell^2 \to \ell^2$ defined by
+	\begin{equation}
+		\notag
+		T \left( x_1, x_2, x_3, x_4, \ldots \right) = \left( 0, 4x_1, x_2, 4x_3, x_4, \ldots \right).
+	\end{equation}
+  \end{problemtext}
+  \begin{solution}
+	Theorem 6.1 tells us that an unique adjoint $T^*$ must exist. By the
+	property of $T^*$ we have that 
+	\begin{equation}
+		\notag
+		\left( T \left\{ x_n \right\} \mid
+		\left\{ y_n \right\}\right) = \left( \left\{ x_n\right\}  \mid \left\{ z_n \right\}  \right)
+	\end{equation}
+	with $\left\{ z_n \right\} = \left\{ Ty_n \right\}$. This can only be
+	true in the case where $z_1 = 4y_2$, $z_2 = y_3$, $z_3 = 4y_4$, and so
+	on. Hence, the adjoint $T^*$ of $T$ is defined uniquely through
+	\begin{equation}
+		\notag
+		T^*\left( \left\{ y_n \right\} \right) = \left( 4y_2, y_3, 4y_4, \ldots \right).
+	\end{equation}
+  \end{solution}
+
+  \problem{6.16}
+  \begin{problemtext}
+      Let $T \in \mathcal{B}(\ell^2)$ be defined by
+      \begin{equation}
+          \notag
+          T \left( x_1, x_2, x_3, x_4, \ldots \right) = \left( x_1, -x_2, x_3, -x_4, \ldots \right).
+      \end{equation}
+      \begin{enumerate}[a)]
+          \item Show that 1 and -1 are eigenvalues of $T$ with eigenvectors
+              $\left( 1, 0, 0, \ldots \right)$ and $\left( 0, 1, 0, 0, \ldots
+              \right)$ respectively.
+          \item Find $T^2$ and hence show that $\sigma(T) = \left\{ 1, -1 \right\}$.
+    \end{enumerate}
+  \end{problemtext}
+  \begin{solution}
+      For a) we simply plug in the values:
+      \begin{align*}
+          T \left( 1, 0, 0, \ldots \right) &= 1\left( 1, 0, 0, \ldots \right) \\
+          T \left( 0, 1, 0, \ldots \right) &= -1\left( 0, 1, 0, \ldots \right) \\
+      \end{align*}
+      Hence 1 and -1 are eigenvalues with respective eigenvectors.
+
+      For b) we compute $T^2$:
+      \begin{equation}
+          \notag
+          T^2x = TTx^2 = \left( x_1, x_2, x_3, x_3, x_4, \ldots \right)
+      \end{equation}
+      so $T^2 = I$. Consequently, $\sigma(T^2) = \left\{ 1 \right\}.
+
+  \end{solution}
 \end{document}
