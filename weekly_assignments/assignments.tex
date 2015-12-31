@@ -6,7 +6,10 @@
   \week{9}
   \problem{2.2}
   \begin{problemtext}
-    Let $S$ be any non-empty set and let $X$ be a normed space over $\mathbb{F}$. Let $F_b(S, X)$ be the linear subspace of $F(S, X)$ of all functions $f : S \to X$ such that $\left\{ \|f(s)\|_{b} \mid s \in S \right\}$ is bounded. Show that $F_b(S, X)$ has a norm defined by
+    Let $S$ be any non-empty set and let $X$ be a normed space over
+    $\mathbb{F}$. Let $F_b(S, X)$ be the linear subspace of $F(S, X)$ of all
+    functions $f : S \to X$ such that $\left\{ \|f(s)\|_{b} \mid s \in S
+    \right\}$ is bounded. Show that $F_b(S, X)$ has a norm defined by
     \begin{equation}
       \notag
       \|f\|_{b} = \sup \left\{ \|f(s)\|_{}\mid s \in S \right\}.
@@ -26,7 +29,9 @@ $\|\cdot\|_{b}$ is a norm on $F_b(S, X)$.
   \problem{2.3}
 
   \begin{problemtext}
-    For each $n \in \mathbb{N}$ let $f_n : \left[ 0, 1 \right] \to \mathbb{R}$ be defined by $f_n(x) = x^n$. Find the norm of $f_n$ in the following cases:
+    For each $n \in \mathbb{N}$ let $f_n : \left[ 0, 1 \right] \to \mathbb{R}$
+    be defined by $f_n(x) = x^n$. Find the norm of $f_n$ in the following
+    cases:
     \begin{enumerate}[a)]
       \item in the normed space $C_\mathbb{R}\left( \left[ 0, 1\right] \right)$;
       \item in the normed space $L^1[0, 1]$.
@@ -34,7 +39,8 @@ $\|\cdot\|_{b}$ is a norm on $F_b(S, X)$.
   \end{problemtext}
   \begin{solution}\hfill
     \begin{enumerate}[a)]
-      \item The \emph{standard norm} on $C_\mathbb{R}\left( \left[ 0,1 \right] \right)$ is defined by
+      \item The \emph{standard norm} on $C_\mathbb{R}\left( \left[ 0,1 \right]
+          \right)$ is defined by
         \begin{equation}
           \notag
           \|f\|_{} = \sup \left\{ |f(x)| \mid x \in \left[ 0, 1 \right] \right\}.
@@ -51,7 +57,9 @@ $\|\cdot\|_{b}$ is a norm on $F_b(S, X)$.
   \problem{2.12}
 
   \begin{problemtext}
-    Let $X$ be a normed linear space and, for any $x \in X$ and $r >0$, let $T = \left\{ y \in X \mid \|y-x\|_{} \leq r \right\}$ and $S = \left\{ y \in X \mid \|x - y\|_{} < r \right\}$.
+    Let $X$ be a normed linear space and, for any $x \in X$ and $r >0$, let $T
+    = \left\{ y \in X \mid \|y-x\|_{} \leq r \right\}$ and $S = \left\{ y \in X
+    \mid \|x - y\|_{} < r \right\}$.
     \begin{enumerate}[a)]
       \item Show that $T$ is closed.
       \item If $z \in T$ and $z_n = \left( r-n^{-1} \right)z$, for $n \in
@@ -100,7 +108,9 @@ $\|\cdot\|_{b}$ is a norm on $F_b(S, X)$.
       \|f_n(s) - f_m(s)\|_{} \leq \|f_n - f_m\|_{b} \leq \varepsilon.
     \end{equation}
     It then follows that $\left\{ f_n(s) \right\}$ is Cauchy in $X$, and since
-    $X$ is complete it is a convergent sequence. It is then meaningful to talk of the limit of this sequence, which we denote $f(s) = \lim_{n\to\infty} f_n(s)$. From the Cauchy property we have that
+    $X$ is complete it is a convergent sequence. It is then meaningful to talk
+    of the limit of this sequence, which we denote $f(s) = \lim_{n\to\infty}
+    f_n(s)$. From the Cauchy property we have that
     \begin{equation}
       \notag
       \lim_{m\to\infty} \|f_n(s) - f_m(s)\|_{} = \|f_n(s) - f(s)\|_{} \leq \varepsilon.
